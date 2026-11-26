@@ -711,3 +711,9 @@ textarea:focus {
 
 /* Form kecil di dalam sel tabel */
 .form-aksi { display: inline; }
+
+/* Modul 13: Export */
+.btn-excel { background: #1d6f42; color: #fff; }
+.btn-excel:hover { background: #165934; color: #fff; }
+.btn-pdf   { background: #c0392b; color: #fff; }
+.btn-pdf:hover { background: #a93226; color: #fff; }
