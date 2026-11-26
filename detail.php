@@ -114,7 +114,10 @@ require 'layout/header.php';
 <div class="card">
     <div class="card-header">
         <h2 class="card-title">Biodata Mahasiswa</h2>
-        <a href="index.php" class="btn btn-sm btn-secondary">Kembali ke daftar</a>
+        <div class="action-buttons">
+            <a href="khs_pdf.php?id=<?= $mahasiswa['id'] ?>" target="_blank" rel="noopener" class="btn btn-sm btn-pdf">Cetak KHS (PDF)</a>
+            <a href="index.php" class="btn btn-sm btn-secondary">Kembali ke daftar</a>
+        </div>
     </div>
     <div class="card-body">
         <dl class="detail-grid">

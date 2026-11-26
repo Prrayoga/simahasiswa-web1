@@ -58,3 +58,20 @@ function buat_password_acak(int $panjang = 8): string
 {
     return substr(bin2hex(random_bytes($panjang)), 0, $panjang);
 }
+
+// Semua mahasiswa yang cocok dengan kata kunci (tanpa pagination), untuk export.
+// Kolom dipilih satu per satu (bukan SELECT *) agar hanya data yang boleh keluar yang ikut diekspor.
+function ambil_mahasiswa_export(mysqli $koneksi, string $cari = ''): array
+{
+    $sql = "SELECT m.nim, m.nama, j.nama_jurusan, m.email
+            FROM mahasiswa m
+            INNER JOIN jurusan j ON j.id = m.jurusan_id";
+
+    if ($cari !== '') {
+        $pola = '%' . $cari . '%';
+        return ambil_semua($koneksi,
+            $sql . " WHERE m.nim LIKE ? OR m.nama LIKE ? OR j.nama_jurusan LIKE ? OR m.email LIKE ?
+                     ORDER BY m.nim", "ssss", $pola, $pola, $pola, $pola);
+    }
+    return ambil_semua($koneksi, $sql . " ORDER BY m.nim");
+}

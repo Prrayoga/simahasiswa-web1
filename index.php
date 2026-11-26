@@ -82,6 +82,10 @@ require 'layout/header.php';
                     <a href="index.php" class="btn btn-sm btn-secondary">Reset</a>
                 <?php endif; ?>
             </form>
+            <a href="export_mahasiswa_excel.php<?= $cari !== '' ? '?cari=' . urlencode($cari) : '' ?>"
+               id="link-excel" class="btn btn-sm btn-excel">Excel</a>
+            <a href="export_mahasiswa_pdf.php<?= $cari !== '' ? '?cari=' . urlencode($cari) : '' ?>"
+               id="link-pdf" target="_blank" rel="noopener" class="btn btn-sm btn-pdf">PDF</a>
         </div>
     </div>
     <div class="card-body" style="padding: 0;">

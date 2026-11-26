@@ -29,6 +29,7 @@ require 'layout/header.php';
 <div class="card">
     <div class="card-header">
         <h3 class="card-title"><span>📝</span> Daftar Nilai</h3>
+        <a href="mhs_khs_pdf.php" target="_blank" rel="noopener" class="btn btn-sm btn-pdf">Cetak KHS (PDF)</a>
     </div>
     <div class="card-body" style="padding:0;">
         <div class="table-responsive">
